@@ -5,7 +5,7 @@ using MindBoxSquareLibrary.Factory;
 
 namespace MindBoxSquareTests
 {
-    public class Tests
+    public class ShapeTests
     {
         private IShapeFactory _shapeFactory;
 
@@ -13,7 +13,7 @@ namespace MindBoxSquareTests
         public void Setup()
         {
             var services = new ServiceCollection();
-            services.AddTransient<IShapeFactory, ShapeReflectionFactory>();
+            services.AddTransient<IShapeFactory, ShapeClassicFactory>();
             var serviceProvider = services.BuildServiceProvider();
 
             _shapeFactory = serviceProvider.GetRequiredService<IShapeFactory>();

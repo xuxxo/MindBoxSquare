@@ -1,14 +1,10 @@
-﻿using MindBoxSquareLibrary.Common;
-
-namespace MindBoxSquareLibrary.DefaultShapes
+﻿namespace MindBoxSquareLibrary.DefaultShapes
 {
     public class Triangle : IShape
     {
         private readonly double _side1;
         private readonly double _side2;
         private readonly double _side3;
-
-        public ShapeType ShapeType => ShapeType.Triangle;
 
         internal Triangle(double side1, double side2, double side3)
         {
@@ -17,7 +13,6 @@ namespace MindBoxSquareLibrary.DefaultShapes
                 side3 + side1 <= side2)
             {
                 throw new ArgumentException("Треугольник не может иметь такие стороны");
-
             }
 
             _side1 = side1;
@@ -30,7 +25,6 @@ namespace MindBoxSquareLibrary.DefaultShapes
             var semiPerimeter = 0.5 * (_side1 + _side2 + _side3);
             return Math.Sqrt(semiPerimeter * (semiPerimeter - _side1) * (semiPerimeter - _side2) * (semiPerimeter - _side3));
         }
-
 
         public List<double> GetShapeParams() => [_side1, _side2, _side3];
     }

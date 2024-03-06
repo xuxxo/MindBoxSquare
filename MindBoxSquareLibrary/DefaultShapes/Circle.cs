@@ -6,12 +6,10 @@ namespace MindBoxSquareLibrary.DefaultShapes
     {
         private readonly double _radius;
 
-        internal Circle(double _radius)
+        internal Circle(double radius)
         {
-            this._radius = _radius;
+            _radius = radius;
         }
-
-        public ShapeType ShapeType => ShapeType.Circle;
 
         public List<double> GetShapeParams()
         {

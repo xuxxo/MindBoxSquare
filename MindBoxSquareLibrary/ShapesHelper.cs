@@ -6,7 +6,7 @@ namespace MindBoxSquareLibrary
     {
         public static bool IsTriangleRight(this IShape shape) 
         {
-            if (shape == null || shape.ShapeType != Common.ShapeType.Triangle)
+            if (shape == null || shape is not Triangle)
             {
                 throw new ArgumentException("Передан не треугольник");
             }
